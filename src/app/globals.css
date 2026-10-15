@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --color-emerald: #087F5B;
+  --color-botanical: #174A3A;
+  --color-lime: #C8F169;
+  --color-mint: #EAF6EF;
+  --color-white: #FFFFFF;
+  --color-soft-white: #F7FAF8;
+  --color-charcoal: #202A25;
+  --color-grey: #64716A;
+
+  --background: #FFFFFF;
+  --foreground: #202A25;
+}
+
+@theme {
+  --font-display: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  --font-editorial: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-dmsans), system-ui, -apple-system, sans-serif;
+  
+  --color-emerald: #087F5B;
+  --color-botanical: #174A3A;
+  --color-lime: #C8F169;
+  --color-mint: #EAF6EF;
+  --color-white: #FFFFFF;
+  --color-soft-white: #F7FAF8;
+  --color-charcoal: #202A25;
+  --color-grey: #64716A;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FFFFFF;
+  color: #202A25;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Typography helper classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Text selection styling with primary emerald */
+::selection {
+  background-color: #087F5B;
+  color: #FFFFFF;
+}
+
+/* Refined minimalist scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7FAF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8F169;
+  background-color: #087F5B;
+  border-radius: 9999px;
+  border: 2px solid #F7FAF8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #174A3A;
+}
