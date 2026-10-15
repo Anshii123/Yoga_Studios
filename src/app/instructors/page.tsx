@@ -6,10 +6,21 @@ import { Button } from "@/components/common/Button";
 import { BotanicalIcon, CompassIcon, HeartIcon, SparklesIcon } from "@/components/common/Icons";
 import { INSTRUCTORS_DATA } from "@/data/instructors";
 
+import { SITE_CONFIG } from "@/lib/site-config";
+
 export const metadata: Metadata = {
-  title: "Our Instructors & Guides",
+  title: "Our Instructors & Guides | Certified Yoga Teachers Bengaluru",
   description:
-    "Meet our thoughtful yoga guides in Bengaluru: Meera Kapoor, Rohan Malhotra, and Naina Sharma. Compassionate instruction tailored to your body.",
+    "Meet our compassionate yoga guides in Bengaluru: Meera Kapoor, Rohan Malhotra, and Naina Sharma. Experienced, trauma-informed, and biomechanically grounded teachers.",
+  alternates: {
+    canonical: "/instructors",
+  },
+  openGraph: {
+    title: "Our Instructors & Guides | AAROH YOGA Bengaluru",
+    description:
+      "Meet our dedicated guides holding space with anatomical precision, humility, and genuine warmth.",
+    url: `${SITE_CONFIG.url}/instructors`,
+  },
 };
 
 export default function InstructorsPage() {
@@ -25,18 +36,18 @@ export default function InstructorsPage() {
         theme="dark"
       />
 
-      <section className="py-16 md:py-24 bg-[#F9FCFA]">
+      <section className="py-16 md:py-24 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           
           {/* Instructor Directory */}
-          <div className="divide-y divide-[#103C3A]/10">
+          <div className="divide-y divide-[#174A3A]/10">
             {INSTRUCTORS_DATA.map((teacher, index) => (
               <TeacherProfile key={teacher.id} instructor={teacher} index={index} />
             ))}
           </div>
 
           {/* Teaching Philosophy Pillars */}
-          <div className="mt-20 py-16 px-6 sm:px-10 rounded-[2rem] bg-[#E7F5F0] border border-[#27C6A0]/25">
+          <div className="mt-20 py-12 sm:py-16 px-5 sm:px-10 rounded-[2rem] bg-[#EAF6EF]/70 border border-[#087F5B]/20">
             <SectionHeading
               eyebrow="OUR COMMITMENTS"
               title="How our guides support your"

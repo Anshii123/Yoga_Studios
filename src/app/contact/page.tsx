@@ -14,9 +14,18 @@ import { SITE_CONFIG } from "@/lib/site-config";
 import { getGeneralWhatsAppUrl } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
-  title: "Contact & Visit Sanctuary",
+  title: "Contact & Visit Sanctuary | Indiranagar, Bengaluru",
   description:
     "Get in touch with AAROH YOGA in Indiranagar, Bengaluru. Enquire about trial classes, schedules, memberships, or plan your first studio visit.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact & Visit Sanctuary | AAROH YOGA Bengaluru",
+    description:
+      "Connect with our sanctuary team. Instant class enquiries via WhatsApp or email, located in Indiranagar, Bengaluru.",
+    url: `${SITE_CONFIG.url}/contact`,
+  },
 };
 
 export default function ContactPage() {
@@ -34,21 +43,21 @@ export default function ContactPage() {
         theme="dark"
       />
 
-      <section className="py-16 md:py-24 bg-[#F9FCFA]">
+      <section className="py-16 md:py-24 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16">
             
             {/* Left Column: Contact Cards & Practical Logistics */}
             <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
               <div>
-                <span className="text-xs font-display font-semibold uppercase tracking-widest text-[#27C6A0] mb-2 block">
+                <span className="text-xs font-display font-semibold uppercase tracking-widest text-[#087F5B] mb-2 block">
                   DIRECT TOUCHPOINTS
                 </span>
-                <h2 className="font-display text-3xl font-extrabold text-[#103C3A]">
+                <h2 className="font-display text-3xl font-extrabold text-[#174A3A]">
                   How to reach our team
                 </h2>
-                <p className="mt-2 text-sm text-[#243431]/75 font-sans leading-relaxed">
+                <p className="mt-2 text-sm text-[#64716A] font-sans leading-relaxed">
                   WhatsApp is our quickest channel for schedule updates and trial session bookings. You are also welcome to drop an email or call during studio hours.
                 </p>
 
@@ -59,36 +68,36 @@ export default function ContactPage() {
                     href={waUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-5 rounded-2xl bg-[#E7F5F0] border border-[#27C6A0]/30 hover:border-[#27C6A0] transition-all flex items-start gap-4 group shadow-sm hover:shadow-md"
+                    className="p-5 rounded-2xl bg-[#EAF6EF] border border-[#087F5B]/30 hover:border-[#087F5B] transition-all flex items-start gap-4 group shadow-2xs hover:shadow-md"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#103C3A] text-[#27C6A0] group-hover:bg-[#27C6A0] group-hover:text-[#092B2C] flex items-center justify-center shrink-0 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-[#087F5B] text-[#FFFFFF] group-hover:scale-105 flex items-center justify-center shrink-0 transition-transform">
                       <WhatsAppIcon size={20} />
                     </div>
                     <div>
-                      <span className="font-display font-bold text-[#103C3A] block">
+                      <span className="font-display font-bold text-[#174A3A] block">
                         WhatsApp Fast Chat
                       </span>
-                      <span className="text-xs text-[#243431]/70 block mt-0.5">
+                      <span className="text-xs text-[#64716A] block mt-0.5">
                         Instant class inquiries & slot confirmation
                       </span>
-                      <span className="text-xs font-display font-bold text-[#27C6A0] mt-1.5 inline-block">
+                      <span className="text-xs font-display font-bold text-[#087F5B] mt-1.5 inline-block">
                         Chat with us →
                       </span>
                     </div>
                   </a>
 
                   {/* Email */}
-                  <div className="p-5 rounded-2xl bg-[#E7F5F0] border border-[#27C6A0]/20 flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#103C3A] text-[#27C6A0] flex items-center justify-center shrink-0">
+                  <div className="p-5 rounded-2xl bg-[#F7FAF8] border border-[#174A3A]/10 flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-[#174A3A] text-[#C8F169] flex items-center justify-center shrink-0">
                       <MailIcon size={20} />
                     </div>
                     <div>
-                      <span className="font-display font-bold text-[#103C3A] block">
+                      <span className="font-display font-bold text-[#174A3A] block">
                         Email Enquiries
                       </span>
                       <a
                         href={`mailto:${SITE_CONFIG.contact.email}`}
-                        className="text-xs text-[#243431]/80 hover:text-[#27C6A0] transition-colors mt-0.5 block"
+                        className="text-xs text-[#64716A] hover:text-[#087F5B] transition-colors mt-0.5 block"
                       >
                         {SITE_CONFIG.contact.email}
                       </a>

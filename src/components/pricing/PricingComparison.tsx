@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/common/SectionHeading";
 
 export const PricingComparison: React.FC = () => {
   return (
-    <div className="mt-24 py-16 px-6 sm:px-10 rounded-[2rem] bg-[#E7F5F0] border border-[#27C6A0]/25 shadow-sm">
+    <div className="mt-24 py-12 sm:py-16 px-5 sm:px-10 rounded-[2rem] bg-[#EAF6EF]/70 border border-[#087F5B]/20 shadow-sm">
       <SectionHeading
         eyebrow="TRANSPARENT VALUE"
         title="Compare all membership benefits."
@@ -14,28 +14,28 @@ export const PricingComparison: React.FC = () => {
 
       {/* Desktop / Tablet Table */}
       <div className="mt-12 hidden md:block overflow-x-auto">
-        <table className="w-full text-left border-collapse">
+        <table className="w-full text-left border-collapse min-w-[650px]">
           <thead>
-            <tr className="border-b-2 border-[#103C3A]/15 text-xs font-display font-bold uppercase tracking-wider text-[#103C3A]">
+            <tr className="border-b-2 border-[#174A3A]/15 text-xs font-display font-bold uppercase tracking-wider text-[#174A3A]">
               <th className="py-4 px-4 w-1/4">Membership Feature</th>
               <th className="py-4 px-4 text-center">Drop-In (₹499)</th>
-              <th className="py-4 px-4 text-center bg-[#27C6A0]/15 rounded-t-2xl font-extrabold text-[#103C3A]">Monthly Flow (₹2,999)</th>
+              <th className="py-4 px-4 text-center bg-[#087F5B]/15 rounded-t-2xl font-extrabold text-[#174A3A]">Monthly Flow (₹2,999)</th>
               <th className="py-4 px-4 text-center">Unlimited (₹4,499)</th>
               <th className="py-4 px-4 text-center">Private (From ₹1,499)</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#103C3A]/10 text-sm font-sans">
+          <tbody className="divide-y divide-[#174A3A]/10 text-sm font-sans">
             {PLAN_COMPARISON.map((row) => (
-              <tr key={row.feature} className="hover:bg-[#F9FCFA]/80 transition-colors">
-                <td className="py-4 px-4 font-display font-semibold text-[#103C3A]">
+              <tr key={row.feature} className="hover:bg-[#FFFFFF]/90 transition-colors">
+                <td className="py-4 px-4 font-display font-semibold text-[#174A3A]">
                   {row.feature}
                 </td>
-                <td className="py-4 px-4 text-center text-[#243431]/80">{row.dropIn}</td>
-                <td className="py-4 px-4 text-center font-bold text-[#103C3A] bg-[#27C6A0]/15">
+                <td className="py-4 px-4 text-center text-[#64716A]">{row.dropIn}</td>
+                <td className="py-4 px-4 text-center font-bold text-[#174A3A] bg-[#087F5B]/10">
                   {row.monthlyFlow}
                 </td>
-                <td className="py-4 px-4 text-center text-[#243431]/80">{row.unlimitedBalance}</td>
-                <td className="py-4 px-4 text-center text-[#243431]/80">{row.privatePractice}</td>
+                <td className="py-4 px-4 text-center text-[#64716A]">{row.unlimitedBalance}</td>
+                <td className="py-4 px-4 text-center text-[#64716A]">{row.privatePractice}</td>
               </tr>
             ))}
           </tbody>
@@ -43,28 +43,28 @@ export const PricingComparison: React.FC = () => {
       </div>
 
       {/* Mobile-Friendly Stacked Comparison Cards */}
-      <div className="mt-10 md:hidden space-y-5 font-sans">
+      <div className="mt-8 md:hidden space-y-4 font-sans">
         {PLAN_COMPARISON.map((row) => (
-          <div key={row.feature} className="p-4 rounded-2xl bg-[#F9FCFA] border border-[#27C6A0]/20 shadow-sm">
-            <span className="font-display font-bold text-xs uppercase tracking-wider text-[#103C3A] block mb-3">
+          <div key={row.feature} className="p-4 rounded-2xl bg-[#FFFFFF] border border-[#087F5B]/20 shadow-2xs">
+            <span className="font-display font-bold text-xs uppercase tracking-wider text-[#174A3A] block mb-3">
               {row.feature}
             </span>
-            <div className="grid grid-cols-2 gap-3 text-xs">
-              <div className="p-2.5 rounded-xl bg-[#E7F5F0]">
-                <span className="text-[10px] text-[#243431]/60 block font-display">Drop-In</span>
-                <span className="font-medium text-[#103C3A]">{row.dropIn}</span>
+            <div className="grid grid-cols-2 gap-2.5 text-xs">
+              <div className="p-2.5 rounded-xl bg-[#F7FAF8] border border-[#174A3A]/10">
+                <span className="text-[10px] text-[#64716A] block font-display">Drop-In</span>
+                <span className="font-medium text-[#174A3A]">{row.dropIn}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-[#27C6A0]/15 border border-[#27C6A0]/30">
-                <span className="text-[10px] text-[#103C3A] font-bold block font-display">Monthly Flow</span>
-                <span className="font-bold text-[#103C3A]">{row.monthlyFlow}</span>
+              <div className="p-2.5 rounded-xl bg-[#EAF6EF] border border-[#087F5B]/30">
+                <span className="text-[10px] text-[#087F5B] font-bold block font-display">Monthly Flow</span>
+                <span className="font-bold text-[#174A3A]">{row.monthlyFlow}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-[#E7F5F0]">
-                <span className="text-[10px] text-[#243431]/60 block font-display">Unlimited</span>
-                <span className="font-medium text-[#103C3A]">{row.unlimitedBalance}</span>
+              <div className="p-2.5 rounded-xl bg-[#F7FAF8] border border-[#174A3A]/10">
+                <span className="text-[10px] text-[#64716A] block font-display">Unlimited</span>
+                <span className="font-medium text-[#174A3A]">{row.unlimitedBalance}</span>
               </div>
-              <div className="p-2.5 rounded-xl bg-[#E7F5F0]">
-                <span className="text-[10px] text-[#243431]/60 block font-display">Private 1-on-1</span>
-                <span className="font-medium text-[#103C3A]">{row.privatePractice}</span>
+              <div className="p-2.5 rounded-xl bg-[#F7FAF8] border border-[#174A3A]/10">
+                <span className="text-[10px] text-[#64716A] block font-display">Private 1-on-1</span>
+                <span className="font-medium text-[#174A3A]">{row.privatePractice}</span>
               </div>
             </div>
           </div>

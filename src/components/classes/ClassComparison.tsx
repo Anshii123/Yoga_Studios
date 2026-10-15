@@ -48,7 +48,7 @@ export const ClassComparison: React.FC = () => {
   ];
 
   return (
-    <div className="mt-20 py-16 px-6 sm:px-10 rounded-[2rem] bg-[#E7F5F0] border border-[#27C6A0]/25">
+    <div className="mt-20 py-12 sm:py-16 px-5 sm:px-10 rounded-[2rem] bg-[#EAF6EF]/70 border border-[#087F5B]/20">
       <SectionHeading
         eyebrow="COMPARISON GUIDE"
         title="How to choose your class."
@@ -57,10 +57,10 @@ export const ClassComparison: React.FC = () => {
       />
 
       {/* Desktop / Tablet Matrix Table */}
-      <div className="mt-12 overflow-x-auto">
-        <table className="w-full text-left border-collapse">
+      <div className="mt-12 hidden md:block overflow-x-auto">
+        <table className="w-full text-left border-collapse min-w-[620px]">
           <thead>
-            <tr className="border-b-2 border-[#103C3A]/15 text-xs font-display font-bold uppercase tracking-wider text-[#103C3A]">
+            <tr className="border-b-2 border-[#174A3A]/15 text-xs font-display font-bold uppercase tracking-wider text-[#174A3A]">
               <th className="py-4 px-4">Class Style</th>
               <th className="py-4 px-4">Pace & Tempo</th>
               <th className="py-4 px-4">Physical Intensity</th>
@@ -68,24 +68,55 @@ export const ClassComparison: React.FC = () => {
               <th className="py-4 px-4">Best Suited For</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#103C3A]/10 text-sm font-sans">
+          <tbody className="divide-y divide-[#174A3A]/10 text-sm font-sans">
             {comparisonData.map((row) => (
-              <tr key={row.style} className="hover:bg-[#F9FCFA]/80 transition-colors">
-                <td className="py-4 px-4 font-display text-lg font-bold text-[#103C3A]">
+              <tr key={row.style} className="hover:bg-[#FFFFFF]/90 transition-colors">
+                <td className="py-4 px-4 font-display text-base font-bold text-[#174A3A]">
                   {row.style}
                 </td>
-                <td className="py-4 px-4 text-[#243431]/80">{row.tempo}</td>
+                <td className="py-4 px-4 text-[#64716A]">{row.tempo}</td>
                 <td className="py-4 px-4">
-                  <span className="inline-block px-3 py-0.5 rounded-full text-xs font-display font-semibold bg-[#27C6A0]/15 text-[#103C3A] border border-[#27C6A0]/30">
+                  <span className="inline-block px-3 py-0.5 rounded-full text-xs font-display font-semibold bg-[#087F5B]/15 text-[#174A3A] border border-[#087F5B]/30">
                     {row.intensity}
                   </span>
                 </td>
-                <td className="py-4 px-4 text-[#243431]/80">{row.focus}</td>
-                <td className="py-4 px-4 text-[#103C3A] font-semibold">{row.idealFor}</td>
+                <td className="py-4 px-4 text-[#64716A]">{row.focus}</td>
+                <td className="py-4 px-4 text-[#174A3A] font-semibold">{row.idealFor}</td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile-Friendly Stacked Comparison Cards */}
+      <div className="mt-8 md:hidden space-y-4 font-sans">
+        {comparisonData.map((row) => (
+          <div key={row.style} className="p-4 rounded-2xl bg-[#FFFFFF] border border-[#087F5B]/20 shadow-2xs">
+            <div className="flex items-center justify-between gap-2 mb-3">
+              <span className="font-display font-bold text-base text-[#174A3A]">
+                {row.style}
+              </span>
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-display font-semibold bg-[#087F5B]/15 text-[#087F5B] border border-[#087F5B]/30">
+                {row.intensity}
+              </span>
+            </div>
+            
+            <div className="space-y-2 text-xs">
+              <div className="flex justify-between py-1 border-b border-[#174A3A]/5">
+                <span className="text-[#64716A] font-medium">Pace:</span>
+                <span className="font-semibold text-[#174A3A] text-right">{row.tempo}</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-[#174A3A]/5">
+                <span className="text-[#64716A] font-medium">Focus:</span>
+                <span className="font-semibold text-[#174A3A] text-right">{row.focus}</span>
+              </div>
+              <div className="flex justify-between py-1">
+                <span className="text-[#64716A] font-medium">Best For:</span>
+                <span className="font-semibold text-[#087F5B] text-right">{row.idealFor}</span>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

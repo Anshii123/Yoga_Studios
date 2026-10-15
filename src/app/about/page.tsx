@@ -5,11 +5,21 @@ import { PageHero } from "@/components/common/PageHero";
 import { SectionHeading } from "@/components/common/SectionHeading";
 import { Button } from "@/components/common/Button";
 import { BotanicalIcon, HeartIcon, SparklesIcon, CompassIcon, ArrowRightIcon } from "@/components/common/Icons";
+import { SITE_CONFIG } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Our Story & Sanctuary Philosophy",
   description:
     "Learn about AAROH YOGA's contemporary botanical philosophy of approachable, adaptable, and sustainable wellness in our Bengaluru sanctuary.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "Our Story & Sanctuary Philosophy | AAROH YOGA",
+    description:
+      "AAROH YOGA was envisioned as an unhurried botanical haven in Bengaluru. Learn about our lineage, philosophy, and mindful teaching approach.",
+    url: `${SITE_CONFIG.url}/about`,
+  },
 };
 
 export default function AboutPage() {

@@ -93,21 +93,21 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#F9FCFA] p-8 sm:p-10 rounded-[2rem] border border-[#27C6A0]/25 shadow-sm">
+    <div className="bg-[#F7FAF8] p-5 sm:p-8 md:p-10 rounded-3xl sm:rounded-[2rem] border border-[#087F5B]/20 shadow-sm">
       <div className="mb-6">
-        <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#103C3A]">
+        <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#174A3A]">
           Send an Enquiry
         </h3>
-        <p className="mt-1 text-sm text-[#243431]/75 font-sans">
+        <p className="mt-1 text-xs sm:text-sm text-[#64716A] font-sans">
           Fill out the details below. As a client-side demonstration website, submitting this form
           will prepare your message and launch WhatsApp or your default email application.
         </p>
       </div>
 
       {isSubmitted ? (
-        <div className="p-6 rounded-2xl bg-[#E7F5F0] border border-[#27C6A0]/40 text-[#103C3A]">
+        <div className="p-5 sm:p-6 rounded-2xl bg-[#EAF6EF] border border-[#087F5B]/30 text-[#174A3A]">
           <div className="flex items-center gap-3 mb-3">
-            <span className="w-8 h-8 rounded-full bg-[#103C3A] text-[#27C6A0] flex items-center justify-center">
+            <span className="w-8 h-8 rounded-full bg-[#174A3A] text-[#C8F169] flex items-center justify-center">
               <CheckIcon size={18} />
             </span>
             <h4 className="font-display text-xl font-bold">Message Prepared!</h4>
